@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CurrencySplitter
 {
@@ -38,6 +26,19 @@ namespace CurrencySplitter
 
             return wealth;
         }
+        private ConversionOptions GetOptions()
+        {
+            ConversionOptions options = new ConversionOptions();
+
+            options.Platinum = (bool)cbPlatinumConvert.IsChecked;
+            options.Gold = (bool)cbGoldConvert.IsChecked;
+            options.Electrum = (bool)cbElectrumConvert.IsChecked;
+            options.Silver = (bool)cbSilverConvert.IsChecked;
+            options.Copper = (bool)cbCopperConvert.IsChecked;
+
+            return options;
+        }
+        
 
         //Create window to show results
         private void CreateResults(Currency wealth)
@@ -62,14 +63,14 @@ namespace CurrencySplitter
             int numberToSplit = 1;
             int.TryParse(tbSplitAmount.Text, out numberToSplit);
             Currency wealth = GetCurrency();
-            CreateResults(CurrencyHelper.DivideCurrencyByMembers(wealth, numberToSplit));
+            CreateResults(CurrencyHelper.DivideCurrencyByMembers(wealth, numberToSplit).ConvertCopperToBest(GetOptions()));
         }
 
         //Handles click event for converting currency
         private void btnConvert_Click(object sender, RoutedEventArgs e)
         {
             Currency wealth = GetCurrency();
-            CreateResults(CurrencyHelper.ConvertCopperToBest(CurrencyHelper.ConvertCurrencyToCopper(wealth)));
+            CreateResults(CurrencyHelper.ConvertCurrencyToCopper(wealth).ConvertCopperToBest(GetOptions()));
         }
 
         private void btnTransact_Click(object sender, RoutedEventArgs e)
@@ -96,6 +97,24 @@ namespace CurrencySplitter
             if(tmp.Text.Equals("0") || string.IsNullOrWhiteSpace(tmp.Text))
             {
                 tmp.Text = "0";
+            }
+        }
+
+        private void tbSplitAmount_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tmp = (TextBox)sender;
+            if(tmp.Text.Equals("1"))
+            {
+                tmp.Text = "";
+            }
+        }
+
+        private void tbSplitAmount_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tmp = (TextBox)sender;
+            if (tmp.Text.Equals("1") || string.IsNullOrWhiteSpace(tmp.Text))
+            {
+                tmp.Text = "1";
             }
         }
         //</events>

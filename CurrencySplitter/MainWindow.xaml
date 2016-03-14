@@ -18,10 +18,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="21*"/>
             <RowDefinition Height="26*"/>
-            <RowDefinition Height="144*"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="128*"/>
         </Grid.RowDefinitions>
-        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="5" Grid.RowSpan="3"/>
-        <GridSplitter x:Name="gridSplitter1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="5" Grid.RowSpan="3"/>
+        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="5" Grid.RowSpan="4"/>
+        <GridSplitter x:Name="gridSplitter1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="5" Grid.RowSpan="4"/>
         <TextBox x:Name="tbPP" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="72" Margin="0,3,0,0" Grid.Row="1" GotFocus="tbGotFocus" LostFocus="tbLostFocus" />
         <TextBox x:Name="tbGP" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="72" Margin="0,3,0,0" Grid.Row="1" Grid.Column="1" GotFocus="tbGotFocus" LostFocus="tbLostFocus"/>
         <TextBox x:Name="tbEP" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="72" Margin="0,3,0,0" Grid.Row="1" Grid.Column="2" GotFocus="tbGotFocus" LostFocus="tbLostFocus"/>
@@ -31,11 +32,16 @@
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Gold(GP)&#x9;" VerticalAlignment="Top" Margin="3,3,0,0" Width="70" Grid.Column="1"/>
         <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Electrum(EP)" VerticalAlignment="Top" Margin="2,3,0,0" Width="70" Grid.Column="2"/>
         <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Silver(SP)" VerticalAlignment="Top" Margin="5,3,0,0" Width="70" Grid.Column="3" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Copper(CP)" VerticalAlignment="Top" Margin="3,3,0,0" Width="70" Grid.Column="4" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="tbSplitAmount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="62" Grid.Column="2" Margin="0,39,0,0" Grid.Row="2"/>
-        <Button x:Name="btnSplit" Grid.ColumnSpan="2" Content="Split" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,76,0,0" Grid.Row="2" Grid.Column="1" Click="btnSplit_Click"/>
-        <Button x:Name="btnConvert" Grid.ColumnSpan="2" Content="Convert" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="3" Margin="0,76,0,0" Grid.Row="2" Click="btnConvert_Click"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Divide By" VerticalAlignment="Top" Grid.Column="1" Margin="18,43,0,0" Grid.Row="2"/>
-        <Button x:Name="btnTransact" Grid.ColumnSpan="2" Content="Transaction" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="2" Margin="0,114,0,0" Grid.Row="2" Click="btnTransact_Click"/>
+        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Copper(CP)" VerticalAlignment="Top" Margin="3,3,0,0" Width="70" Grid.Column="4"/>
+        <TextBox x:Name="tbSplitAmount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="62" Grid.Column="2" Margin="0,23,0,0" Grid.Row="3" GotFocus="tbSplitAmount_GotFocus" LostFocus="tbSplitAmount_LostFocus" />
+        <Button x:Name="btnSplit" Grid.ColumnSpan="2" Content="Split" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,60,0,0" Grid.Row="3" Grid.Column="1" Click="btnSplit_Click"/>
+        <Button x:Name="btnConvert" Grid.ColumnSpan="2" Content="Convert" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="3" Margin="0,60,0,0" Grid.Row="3" Click="btnConvert_Click"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Divide By" VerticalAlignment="Top" Grid.Column="1" Margin="18,27,0,0" Grid.Row="3"/>
+        <Button x:Name="btnTransact" Grid.ColumnSpan="2" Content="Transaction" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="2" Margin="0,98,0,0" Grid.Row="3" Click="btnTransact_Click"/>
+        <CheckBox x:Name="cbPlatinumConvert" IsChecked="True" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,0,0,0" Grid.Row="2" Width="71" FontSize="10" />
+        <CheckBox x:Name="cbGoldConvert" IsChecked="True"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Width="71" FontSize="10" Grid.Column="1" />
+        <CheckBox x:Name="cbElectrumConvert" IsChecked="True" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,0,0,0" Grid.Row="2" Width="71" FontSize="10" Grid.Column="2" />
+        <CheckBox x:Name="cbSilverConvert" IsChecked="True"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,1,0,0" Grid.Row="2" Width="71" FontSize="10" Grid.Column="3" />
+        <CheckBox x:Name="cbCopperConvert" IsChecked="True" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Width="71" FontSize="10" Grid.Column="4"  />
     </Grid>
 </Window>

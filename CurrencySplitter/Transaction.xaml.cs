@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CurrencySplitter
 {
@@ -53,12 +42,24 @@ namespace CurrencySplitter
             int.TryParse(tbPPCost.Text, out cost.Platinum);
         }
 
+        private ConversionOptions GetConversion()
+        {
+            ConversionOptions options = new ConversionOptions();
+            options.Platinum = (bool)cbPlatinum.IsChecked;
+            options.Gold = (bool)cbGold.IsChecked;
+            options.Electrum = (bool)cbElectrum.IsChecked;
+            options.Silver = (bool)cbSilver.IsChecked;
+            options.Copper = (bool)cbCopper.IsChecked;
+
+            return options;
+        }
+
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
             GetCurrency();
             int copperWealth, copperCost;
-            copperWealth = CurrencyHelper.ConvertCurrencyToCopper(wealth);
-            copperCost = CurrencyHelper.ConvertCurrencyToCopper(cost);
+            copperWealth = CurrencyHelper.ConvertCurrencyToCopper(wealth).Copper;
+            copperCost = CurrencyHelper.ConvertCurrencyToCopper(cost).Copper;
             copperWealth -= copperCost;
             wealth = CurrencyHelper.ConvertCopperToBest(copperWealth);
             results window = new results();

@@ -41,5 +41,10 @@
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cost of Transaction" VerticalAlignment="Top" Margin="-165,1,0,0" Grid.Row="4"/>
         <Button x:Name="btnCalculate" Grid.ColumnSpan="2" Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="2" Margin="0,47,0,0" Grid.Row="5" Click="btnCalculate_Click"/>
         <Label x:Name="label" Content="-" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-38,0,0,0" Grid.Row="2" Grid.RowSpan="2" Height="45" Width="38"/>
+        <CheckBox x:Name="cbPlatinum" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,23,0,0" Grid.Row="4" Grid.RowSpan="2" IsChecked="True"/>
+        <CheckBox x:Name="cbGold" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Row="5" Grid.Column="1" IsChecked="True"/>
+        <CheckBox x:Name="cbElectrum" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Row="5" Grid.Column="2" IsChecked="True"/>
+        <CheckBox x:Name="cbSilver" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Row="5" Grid.Column="3" IsChecked="True"/>
+        <CheckBox x:Name="cbCopper" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Row="5" RenderTransformOrigin="14.95,0.867" Grid.Column="4" IsChecked="True"/>
     </Grid>
 </Window>
