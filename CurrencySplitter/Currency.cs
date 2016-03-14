@@ -8,6 +8,16 @@
         public int Silver;
         public int Copper;
 
+
+        public Currency(int platinum = 0, int gold = 0, int electrum = 0, int silver = 0, int copper = 0)
+        {
+            Platinum = platinum;
+            Gold = gold;
+            Electrum = electrum;
+            Silver = silver;
+            Copper = copper;
+        }
+
         //Converts total value in copper to standard currencies
         public Currency ConvertCopperToBest(ConversionOptions options)
         {

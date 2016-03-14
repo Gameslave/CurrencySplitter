@@ -61,7 +61,7 @@ namespace CurrencySplitter
             copperWealth = CurrencyHelper.ConvertCurrencyToCopper(wealth).Copper;
             copperCost = CurrencyHelper.ConvertCurrencyToCopper(cost).Copper;
             copperWealth -= copperCost;
-            wealth = CurrencyHelper.ConvertCopperToBest(copperWealth);
+            wealth = new Currency(copper: copperWealth).ConvertCopperToBest(GetConversion());
             results window = new results();
 
             window.tbPP.Text = wealth.Platinum.ToString();

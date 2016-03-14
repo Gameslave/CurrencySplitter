@@ -29,18 +29,5 @@
             results.Copper += wealth.Copper;
             return results;
         }
-
-        public static Currency ConvertCopperToBest(int copper)
-        {
-            return ConvertCopperToBest(copper, new ConversionOptions());
-        }
-
-        public static Currency ConvertCopperToBest(int copper, ConversionOptions options)
-        {
-            Currency results = new Currency();
-            results.Copper = copper;
-            results.ConvertCopperToBest(options);
-            return results;
-        }
     }
 }
